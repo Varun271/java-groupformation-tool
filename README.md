@@ -1,3 +1,1 @@
-# Group One
-
-Production url : https://group1-app.herokuapp.com/register
+Java spring boot project with CI/CD pipeline and test cases for group formation.
