@@ -1,0 +1,21 @@
+stages:
+    - build
+    - test
+    - deploy
+    
+build:
+    stage: build
+    script: 
+        - chmod +x ./gradlew
+        - ./gradlew
+test:
+    stage: test
+    script:
+        - gradle test
+deploy_dev:
+    stage: deploy
+    only:
+        - dev
+    script:
+        - heroku --version
+        - echo "vidip" | sudo -S dpl --provider=heroku --app=secret-reef-01849 --api-key=701a59e7-6e69-42c4-9511-0bde4f50625f
